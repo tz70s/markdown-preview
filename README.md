@@ -7,6 +7,8 @@ I use the markdown transformer via [Blackfriday](https://github.com/russross/bla
 
 ### Usage
 ```Bash
+git clone https://github.com/tz70s/markdown-preview.git
+
 # check dependencies
 go get -u "github.com/russross/blackfriday"
 go get -u "github.com/microcosm-cc/bluemonday"
