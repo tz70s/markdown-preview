@@ -11,6 +11,16 @@ import (
 
 var input_file string
 
+func exist(name string) bool {
+
+	if _, err := os.Stat(name); err != nil {
+		if os.IsNotExist(err) {
+			return false
+		}
+	}
+	return true
+}
+
 func parse() string {
 
 	var (
@@ -19,7 +29,11 @@ func parse() string {
 		err      error
 		out_file string = "output.html"
 	)
-
+	// check out file exist
+	if exist(input_file) {
+		log.Fatal("File is not exist")
+		os.Exit(-1)
+	}
 	// open markdown file
 	if input, err = ioutil.ReadFile(input_file); err != nil {
 		log.Fatal("Error of reading markdown file")
@@ -53,11 +67,13 @@ func parse() string {
 
 func command() (string, string) {
 	fmt.Println("Usage")
-	usage := "\tExecute : ./glue [port] [inputfile]\n\tHelp    : ./glue"
+	usage := "\tExecute : ./glue [inputfile] [port]\n\tHelp    : ./glue"
 
-	if len(os.Args) <= 2 {
+	if len(os.Args) <= 1 {
 		fmt.Println(usage)
 		os.Exit(-1)
+	} else if len(os.Args) <= 2 && len(os.Args) > 1 {
+		return string(os.Args[1]), "9090"
 	}
 
 	return string(os.Args[1]), string(os.Args[2])
@@ -65,7 +81,7 @@ func command() (string, string) {
 
 func main() {
 	var port string
-	port, input_file = command()
+	input_file, port = command()
 
 	server(":" + port)
 }

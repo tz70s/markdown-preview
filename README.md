@@ -6,8 +6,12 @@ This tool is an simple markdown file previewer inspired by hexo, and practice on
 I use the markdown transformer via [Blackfriday](https://github.com/russross/blackfriday) and [Bluemonday](https://github.com/microcosm-cc/bluemonday)
 
 ### Usage
-```
-#example
-./markdown-preview 9090 README.md
+```Bash
+# example
+# ./markdown-preview [inputfile] [port(default = 9090)]
+./markdown-preview README.md
+# check out usage
+./markdown-preview
+
 ```
 
