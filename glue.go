@@ -30,7 +30,7 @@ func parse() string {
 		out_file string = "output.html"
 	)
 	// check out file exist
-	if exist(input_file) {
+	if !exist(input_file) {
 		log.Fatal("File is not exist")
 		os.Exit(-1)
 	}

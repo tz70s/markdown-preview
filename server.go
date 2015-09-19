@@ -10,9 +10,11 @@ import (
 )
 
 func links(w http.ResponseWriter, r *http.Request) {
+	out := parse()
+
 	r.ParseForm()
 	fmt.Println("method: ", r.Method)
-	t, _ := template.ParseFiles(parse())
+	t, _ := template.ParseFiles(out)
 	t.Execute(w, nil)
 }
 
