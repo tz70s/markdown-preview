@@ -29,5 +29,5 @@ go build
 ```
 
 ### To Do
-Add github api into command line interface
-Image link can't display now
+* Add github api into command line interface
+* Image link can't display now
