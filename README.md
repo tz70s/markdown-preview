@@ -26,3 +26,5 @@ go build
 
 ```
 
+### To Do
+Add github api into command line interface
