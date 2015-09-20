@@ -1,0 +1,31 @@
+<h1>Markdown Previewer</h1>
+
+<p>This tool is a simple markdown file previewer inspired by hexo, and practice on web programming.</p>
+
+<h3>Dependencies</h3>
+
+<p>I use the markdown transformer via <a href="https://github.com/russross/blackfriday" rel="nofollow">Blackfriday</a> and <a href="https://github.com/microcosm-cc/bluemonday" rel="nofollow">Bluemonday</a></p>
+
+<h3>Usage</h3>
+
+<pre><code>git clone https://github.com/tz70s/markdown-preview.git
+
+# check dependencies
+go get -u &#34;github.com/russross/blackfriday&#34;
+go get -u &#34;github.com/microcosm-cc/bluemonday&#34;
+
+# build
+go build
+</code></pre>
+
+<pre><code># example
+# ./markdown-preview [inputfile] [port(default = 9090)]
+./markdown-preview README.md
+# check out usage
+./markdown-preview
+
+</code></pre>
+
+<h3>To Do</h3>
+
+<p>Add github api into command line interface</p>
